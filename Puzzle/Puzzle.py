@@ -497,12 +497,14 @@ def Guess_culprit(correct):
     4. Rebecca Clarke
     5. Mr. Edward Finch
     6. Arnold Gray
+    7. Mr. Graves
     : """)
     if player_input == correct:
         print("Correct")
         return False
     else:
         print("Incorrect")
+        return True
 
 celar_found = False
 celar_found = False
@@ -510,7 +512,7 @@ current_room = "1"
 correct = ""
 incorrect = True
 
-print ("On a stormy night, five guests arrive at the secluded Blackwood Manor, invited by the wealthy but enigmatic Lady Eleanor Blackwood. By midnight, Lady Eleanor is found dead in her study, a glass of poisoned wine in her hand. With the storm cutting off all communication, the guests and the loyal butler, Mr. Graves, must uncover the killer before the night is over.")
+print ("On a stormy night, five guests arrive at the secluded Blackwood Manor, invited by the wealthy but enigmatic Lady Eleanor Blackwood. By midnight, Lady Eleanor is found dead in in the Main Hall, a glass of poisoned wine in her hand. With the storm cutting off all communication, the guests and you her loyal butler, Mr. Graves, must uncover the killer before the night is over.")
 
 while incorrect == True:
     player_input = input("""What would you like to do
