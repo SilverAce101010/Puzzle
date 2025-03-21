@@ -333,12 +333,32 @@ def Question_suspect(current_room):
         5. Mr. Edward Finch
         6. Arnold Gray
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        elif player_input == "4":
+            print("")
+        elif player_input == "5":
+            print("")
+        elif player_input == "6":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "2": #Study
         player_input = input("""Who would you like to question
         1. Dr. Victor Langley
         2. Margaret Holloway
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "3": #Library
         player_input = input("""Who would you like to question
@@ -346,12 +366,26 @@ def Question_suspect(current_room):
         2. Mr. Edward Finch
         3. Arnold Gray
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "4":#Dinning Room
         player_input = input("""Who would you like to question
         1. Mr. Edward Finch
         2. Arnold Gray 
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "5": #Kitchen
         player_input = input("""Who would you like to question
@@ -359,6 +393,14 @@ def Question_suspect(current_room):
         2. James Thornton
         3. Mr. Edward Finch
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "6": #Parlor
         player_input = input("""Who would you like to question
@@ -366,12 +408,26 @@ def Question_suspect(current_room):
         2. Margaret Holloway
         3. Mr. Edward Finch
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "7": #Servants' Quarters
         player_input = input("""Who would you like to question
         1. Rebecca Clarke
         2. Arnold Gray
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "8": #Guest Bedrooms
         player_input = input("""Who would you like to question
@@ -380,6 +436,16 @@ def Question_suspect(current_room):
         3. James Thornton
         4. Mr. Edward Finch
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        elif player_input == "4":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "9": #Garden & Greenhouse
         player_input = input("""Who would you like to question
@@ -387,23 +453,43 @@ def Question_suspect(current_room):
         2. Margaret Holloway
         3. Mr. Edward Finch
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        elif player_input == "3":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "10": #Main Bedroom
         player_input = input("""Who would you like to question
         1. Margaret Holloway
         2. Arnold Gray
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        else:
+            print ("Invalid input")
 
     elif current_room == "11": #Cellar
         player_input = input("""Who would you like to question
         1. Rebecca Clarke
         2. James Thorton
         : """)
+        if player_input == "1":
+            print("")
+        elif player_input == "2":
+            print("")
+        else:
+            print ("Invalid input")
 
     else:
         print("Invalid input")
 
-def Guess_culprit():
+def Guess_culprit(correct):
     player_input = input("""What is your guess
     1. Dr. Victor Langley
     2. Margaret Holloway
@@ -412,14 +498,21 @@ def Guess_culprit():
     5. Mr. Edward Finch
     6. Arnold Gray
     : """)
+    if player_input == correct:
+        print("Correct")
+        return False
+    else:
+        print("Incorrect")
 
 celar_found = False
+celar_found = False
+current_room = "1"
+correct = ""
+incorrect = True
+
 print ("On a stormy night, five guests arrive at the secluded Blackwood Manor, invited by the wealthy but enigmatic Lady Eleanor Blackwood. By midnight, Lady Eleanor is found dead in her study, a glass of poisoned wine in her hand. With the storm cutting off all communication, the guests and the loyal butler, Mr. Graves, must uncover the killer before the night is over.")
 
-current_room = 1
-celar_found = False
-
-while True:
+while incorrect == True:
     player_input = input("""What would you like to do
     1. Move rooms
     2. Search current room
@@ -434,6 +527,6 @@ while True:
     elif player_input == "3":
         Question_suspect(current_room)
     elif player_input == "4":
-        Guess_culprit()
+        incorrect = Guess_culprit(correct)
     else:
         print("Invalid input")
