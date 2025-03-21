@@ -9,11 +9,6 @@ def Move_Room(current_room):
     4. Dining Room
     5. Kitchen
     6. Parlor
-    7. Servants' Quarters
-    8. Guest Bedrooms
-    9. Garden & Greenhouse
-    10. Main Bedroom
-    11. Cellar
     : """)
     if player_input == "":
         print("You have not moved")
@@ -38,11 +33,11 @@ rooms = {
 }
 
 suspects = {
-    "1": "Dr. Victor Langley – A brilliant but disgraced scientist with a history of financial trouble.",
-    "2": "Margaret \"Maggie\" Holloway – Lady Eleanor’s estranged niece, desperate for an inheritance.",
-    "3": "James Thornton – A charming but debt-ridden gambler with ties to the victim.",
-    "4": "Rebecca Clarke – A loyal housekeeper who knows all the family secrets.",
-    "5": "Mr. Edward Finch – A reserved lawyer who recently altered Lady Eleanor’s will."
+    "1": "Dr. Victor Langley",
+    "2": "Margaret Holloway",
+    "3": "James Thornton",
+    "4": "Rebecca Clarke",
+    "5": "Mr. Edward Finch"
 }
 
 statements = {
@@ -94,7 +89,7 @@ suspects_questioned = {
 
 all_statements_heard = []  # All statements heard throughout the game
 
-def View_progress(current_room):
+def View_progress():
     print("\n--- Progress so far ---")
     
     # View all clues found throughout the game
@@ -191,14 +186,20 @@ while incorrect:
     2. Search current room
     3. Question suspects
     4. Guess the culprit
-    5. View progress (clues & statements)
+    5. View progress
     6. View suspect info
     : """)
     if player_input == "1":
         current_room = Move_Room(current_room)
-    elif player_input == "6":
-        View_suspect_info()
+    elif player_input == "2":
+        Search_room(current_room)
+    elif player_input == "3":
+        Question_suspect()
     elif player_input == "4":
         incorrect = Guess_culprit()
+    elif player_input == "5":
+        View_progress()
+    elif player_input == "6":
+        View_suspect_info()
     else:
         print("Invalid input")
