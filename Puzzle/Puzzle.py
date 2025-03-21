@@ -1,31 +1,17 @@
-def Move_Room(celar_found, current_room):
-    if celar_found == True:
-        player_input = input("""Which room would you like to move to
-        1. Grand Hall
-        2. Study
-        3. Library
-        4. Dinning Room
-        5. Kitchen
-        6. Parlor
-        7. Servants' Quarters
-        8. Guest Bedrooms
-        9. Garden & Greenhouse
-        10. Main Bedroom
-        11. Cellar
-        : """)
-    else:
-        player_input = input("""Which room would you like to move to
-        1. Grand Hall
-        2. Study
-        3. Library
-        4. Dinning Room
-        5. Kitchen
-        6. Parlor
-        7. Servants' Quarters
-        8. Guest Bedrooms
-        9. Garden & Greenhouse
-        10. Main Bedroom
-        : """)
+def Move_Room(current_room):
+    player_input = input("""Which room would you like to move to
+    1. Grand Hall
+    2. Study
+    3. Library
+    4. Dinning Room
+    5. Kitchen
+    6. Parlor
+    7. Servants' Quarters
+    8. Guest Bedrooms
+    9. Garden & Greenhouse
+    10. Main Bedroom
+    11. Cellar
+    : """)
     if player_input == "":
         print("You have not moved")
         player_input = current_room
@@ -101,7 +87,7 @@ def Search_room(current_room):
             print("You notice that the carpet around the door way been torn slightly.")
 
         elif player_input == "3":
-            print("As you pull a book from the shelf it opens a secret passage.")
+            print("As you pull a book from the shelf you notice all of it pages have been burned.")
 
         elif player_input == "4":
             print("You can tell that many of the candles on the chandalier have not been relit.")
@@ -507,7 +493,6 @@ def Guess_culprit(correct):
         return True
 
 celar_found = False
-celar_found = False
 current_room = "1"
 correct = ""
 incorrect = True
@@ -523,7 +508,7 @@ while incorrect == True:
     : """)
 
     if player_input == "1":
-        current_room = Move_Room(celar_found, current_room)
+        current_room = Move_Room(current_room)
     elif player_input == "2":
         Search_room(current_room)
     elif player_input == "3":
